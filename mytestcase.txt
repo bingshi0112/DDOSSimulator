@@ -1,0 +1,31 @@
+javac MasterBot.java  
+java MasterBot -p 9999
+javac SlaveBot.java
+java SlaveBot -h localhost 9999
+
+connect localhost www.google.com 80 6
+connect localhost www.google.com 80 keepalive
+connect localhost www.google.com 80 /#q=abcdef
+connect localhost www.google.com 80 /#q=
+connect localhost www.google.com 80 5 keepalive
+connect localhost www.google.com 80 5 /#q=
+connect localhost www.google.com 80 5 /#q=abcdef
+connect localhost 8.8.4.4 80 6
+
+ipscan localhost 127.0.0.1-127.0.0.50
+ipscan localhost 8.8.4.4-8.8.4.8
+ipscan localhost 192.0.32.10-192.0.32.20
+ipscan all 8.8.4.4-127.0.0.1
+
+tcpportscan localhost www.google.com 70-80
+tcpportscan localhost www.google.com 80-4430
+tcpportscan localhost 127.0.0.1 80-90
+tcpportscan localhost 8.8.8.8 443-443
+tcpportscan localhost 216.58.194.174 80-443
+tcpportscan all www.google.com 80-443
+
+geoipscan localhost 127.0.0.1-127.0.0.50
+geoipscan localhost 8.8.4.4-8.8.4.8
+geoipscan localhost 192.0.32.10-192.0.32.20
+geoipscan all 8.8.4.4-8.8.4.8
+geoipscan all 130.65.254.14-130.65.254.14
